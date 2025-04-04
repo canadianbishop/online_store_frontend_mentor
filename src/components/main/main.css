@@ -159,3 +159,80 @@ li h4{
       font-size: 1rem;
       color:hsl(20, 50%, 98%) ;
 }
+
+
+
+/* media queries */
+
+/* mobile design */
+
+@media (max-width:600px){
+      body{
+            /* background: yellow; */
+      }
+      .container_layout{
+            flex-direction: column;
+            gap: 1em;
+            /* border: 1px solid black; */
+            
+      }
+
+      .main{
+            width: 100%;
+            /* border: 1px dotted blue; */
+            display: flex;
+            flex-direction: column;
+      }
+
+      .card_cont{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            /* border: 2px solid red; */
+      }
+
+      /* aside section */
+
+      .aside{
+            width: 100%;
+            
+      }
+}
+
+
+
+/* tablet designs */
+
+@media (min-width:650px) and (max-width:768px){
+
+
+.container_layout{
+      flex-direction: column;
+      gap: 1em;
+      
+}
+
+.main{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+}
+
+.card_cont{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+}
+
+
+      /* aside section */
+
+      .aside{
+            width: 80%;
+            align-self: center;
+            
+      }
+
+}
