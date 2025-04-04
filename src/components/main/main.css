@@ -97,6 +97,7 @@ li h4{
       margin-right: auto;
       margin-left: 1em;
       font-size: 1.05rem;
+      word-spacing: .5em;
 }
 
 .carted_items div{
