@@ -1,6 +1,6 @@
 import "./card.css";
 export default function Card(props) {
-
+console.log(props)
   return (
     <div className="card_container">
       <div className="img_container">
