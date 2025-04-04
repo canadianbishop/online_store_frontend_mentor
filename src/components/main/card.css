@@ -1,0 +1,132 @@
+.card_container {
+  width: 31%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  flex: 0 0 31%;
+  /* background: rgb(219, 219, 47); */
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 0.4em;
+}
+
+.img_container {
+  max-width: 100%;
+  margin-bottom: 0.8em;
+}
+
+.card_container img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.dish_infos > p:first-child {
+  color: hsl(14, 25%, 72%);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+  margin-top: 1.5em;
+}
+
+.dish_infos > p:nth-child(2) {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+.dish_infos > p:nth-child(3) {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: hsl(14, 86%, 42%);
+}
+
+.btn {
+  padding: 0.5em 1em;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  position: absolute;
+  top: 60%;
+  left: 23%;
+  display: flex;
+  align-items: center;
+  background: hsl(20, 50%, 98%);
+}
+
+.btn img {
+  width: 25px;
+  height: auto;
+}
+
+.btn div {
+  display: inline-flex;
+  margin-right: 0.3em;
+}
+
+.btn > .increament,
+.btn > .decreament {
+  display: inline-flex;
+}
+
+
+
+/* second button */
+
+.addcart_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 2em 1em 2em;
+  gap: 0.7em;
+  position: absolute;
+  top: 60%;
+  left: 26%;
+  border: none;
+  border-radius: 30px;
+}
+
+.addcart_btn span{
+      font-size: 1rem;
+      color:hsl(20, 50%, 98%);
+      font-weight: 500;
+      margin-left: 10px;
+}
+
+.increament {
+  border: 1px solid hsl(20, 50%, 98%);
+  height: 15px;
+  width: 15px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* margin-right: 10px; */
+}
+
+.increament img {
+  width: 10px;
+  height: 1px;
+}
+
+.decreament {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  border-radius: 11px;
+  border: 1px solid hsl(20, 50%, 98%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+  /* padding: .1em; */
+}
+
+.decreament img {
+  width: 10px;
+}
+
+.btn-bg {
+  background: hsl(14, 86%, 42%);
+}

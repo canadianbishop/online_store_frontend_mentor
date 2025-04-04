@@ -1,0 +1,160 @@
+.container{
+      width: 90%;
+      max-width: 1150px;
+      margin-inline: auto;
+}
+
+.container_layout{
+      display: flex;
+      
+}
+
+.main{
+      width: 70%;
+      /* border: 1px dotted blue; */
+      display: flex;
+      flex-direction: column;
+}
+
+.main h1{
+      margin-bottom: .8em;
+      font-size: 2rem;
+      font-weight: 900;
+}
+
+.card_cont{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .9em;
+}
+
+
+/* aside section */
+
+.aside{
+      /* border: 1px solid black; */
+      width: 30%;
+      
+}
+
+.cart_details{
+      display: flex;
+      flex-direction: column;
+      background: hsl(20, 50%, 98%);
+      /* background: rgb(161, 161, 102); */
+      width: 95%;
+      justify-content: center;
+      align-items: center;
+      gap: .5em;
+      margin-inline: auto;
+      padding: 1em .5em;
+      border-radius: 15px;
+}
+
+.cart_details h2{
+      align-self: flex-start;
+      color: hsl(14, 86%, 42%);
+      font-size: 1.5rem;
+      text-transform: capitalize;
+}
+
+.carted_items_container{
+      width: 100%;
+      /* background: yellow; */
+}
+
+.aside ul{
+      /* background: gray; */
+      list-style: none;
+      width: 100%;
+      font-size: 1.2rem;
+}
+
+.aside li{
+      padding: .5em 0;
+      border-bottom: 0.5px solid hsl(14, 25%, 72%);
+}
+
+li h4{
+      margin-bottom: .5em;
+      font-size: 1.1rem;
+      font-weight: 600;
+}
+
+
+.carted_items{
+      display: flex;
+      align-items: center;
+}
+
+.carted_items span{
+      color:  hsl(14, 86%, 42%);
+      font-size: 1.05rem;
+}
+
+.carted_items p{
+      margin-right: auto;
+      margin-left: 1em;
+      font-size: 1.05rem;
+}
+
+.carted_items div{
+      display: inline-flex;
+      height: 15px;
+      width: 15px;
+      border: 1px solid hsl(13, 31%, 94%);
+      justify-content: center;
+      border-radius: 10px;
+}
+
+.carted_items img{
+      width: 10px;
+}
+
+
+.carts_total{
+      margin-top: 2em;
+}
+
+.total{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.total >span:first-child{
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: hsl(14, 25%, 72%);
+}
+
+.total>span:nth-child(2){
+      font-weight: 800;
+      font-size: 1.4rem;
+}
+
+.msg_container{
+      background: hsl(13, 31%, 94%);
+      display: flex;
+      padding: .7rem .5em;
+      width: 90%;
+      margin-inline: auto;
+      margin-top: 1.5em;
+}
+
+.msg_container img{
+      margin-right: .8em;
+}
+
+.order_btn{
+      border: none;
+      text-align: center;
+      width: 100%;
+      padding: 1em 0;
+      border-radius: 25px;
+      margin-top: 1.5em;
+      font-family: 'Red Hat Text';
+      font-size: 1rem;
+      color:hsl(20, 50%, 98%) ;
+}

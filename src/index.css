@@ -1,0 +1,16 @@
+*{
+  padding: 0;
+  margin: 0;
+
+}
+
+body{
+  font-size: 1rem;
+  background: hsl(13, 31%, 94%);
+  margin: 0;
+  font-family: 'Red Hat Text';
+  padding: 2.5em 0;
+}
+
+
+
