@@ -1,9 +1,10 @@
 import "./card.css";
 export default function Card(props) {
+ 
   return (
     <div className="card_container">
       <div className="img_container">
-        <img src={props.menu.image.desktop} alt="img" />
+        <img src={props.menu.image.desktop} alt="img" className="product_img" />
       </div>
       <div className="dish_infos">
         <p>{props.menu.category}</p>
@@ -11,17 +12,30 @@ export default function Card(props) {
         <p>${props.menu.price}</p>
       </div>
       {props.menu.add ? (
-        <button type="button" className="addcart_btn btn-bg">
-          <div className="increament" onClick={()=>props.subcartnum(props.menu.id)} >
+        <button
+          type="button"
+          className="addcart_btn btn-bg"
+        >
+          <div
+            className="increament"
+            onClick={() => props.subcartnum(props.menu.id)}
+          >
             <img src="/images/icon-decrement-quantity.svg" alt="img" />
           </div>{" "}
           <span>{props.menu.number}</span>
-          <div className="decreament" onClick={()=>props.addcartnum(props.menu.id)}>
+          <div
+            className="decreament"
+            onClick={() => props.addcartnum(props.menu.id)}
+          >
             <img src="/images/icon-increment-quantity.svg" alt="img" />
           </div>
         </button>
       ) : (
-        <button type="button" className="btn" onClick={()=> props.setAdd(props.menu.id)}>
+        <button
+          type="button"
+          className="btn"
+          onClick={() => props.setAdd(props.menu.id)}
+        >
           <div>
             <img src="/images/icon-add-to-cart.svg" alt="img" />
           </div>

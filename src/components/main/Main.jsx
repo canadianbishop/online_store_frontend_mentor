@@ -4,10 +4,26 @@ import "./main.css";
 import Data from "./data.json";
 import { useEffect, useState } from "react";
 import List from "./List";
+import Submit from "../submit_order/Submit";
+import { Confirmed_li } from "./List";
 
 export default function Main() {
   const [dets, setDets] = useState([]);
   const [carts, setcarts] = useState([]);
+  const[confirm, setConfirm] = useState(false)
+
+
+   // here i am modifying the data recieved before passing it to the dets state
+
+   useEffect(() => {
+    const updatedData = Data.map((item) => ({
+      ...item,
+      id: nanoid(),
+      add: false,
+      number: 0,
+    }));
+    setDets(updatedData);
+  }, []);
 
   // here i am mapping through the dets array and creating a card componet from each element
   const items = dets.map((item) => (
@@ -26,17 +42,14 @@ export default function Main() {
     <List key={item.id} listDets={item} onDelete={deleteCartItem} />
   ));
 
-  // here i am modifying the data recieved before passing it to the dets state
 
-  useEffect(() => {
-    const updatedData = Data.map((item) => ({
-      ...item,
-      id: nanoid(),
-      add: false,
-      number: 0,
-    }));
-    setDets(updatedData);
-  }, []);
+  // here i am mapping throught the confirmed order
+  
+  const confirmedList = carts.map((item)=>{
+    return <Confirmed_li key={item.id} confirmed={item}/>
+  })
+  
+ 
 
   // add item to cart button.. this flips dets.add from false to true
   function addItem(id) {
@@ -46,6 +59,8 @@ export default function Main() {
       );
     });
   }
+
+
 
   //   update carted numbers.. this function helps increment det.number by 1
 
@@ -77,7 +92,7 @@ export default function Main() {
   function subFromCart(id) {
     setDets((prevDets) => {
       return prevDets.map((item) =>
-        item.id === id ? { ...item, number: item.number - 1 } : item
+        item.id === id ? { ...item, number: item.number === 0 ? item.number: item.number - 1 } : item
       );
     });
 
@@ -101,8 +116,28 @@ export default function Main() {
     setcarts((prevcart) => prevcart.filter((cartLi) => cartLi.id !== id));
   }
 
+
+  //this function flips confirm state
+
+  function onConfirm(){
+    setConfirm(prev=> !prev)
+  }
+
+
+  //this function clears out the cart
+  function clear(){
+    setcarts([])
+    setConfirm(prev=> !prev)
+    setDets(prevdets=>{
+      return prevdets.map(item=>(item.add? {...item, add: !item.add, number:0}: item))
+    })
+    // window.location.reload()
+    
+  }
+
   return (
     <div className="container container_layout">
+     { confirm ? <Submit li={confirmedList} onClear={clear} carts={carts}/> : null}
       <section className="main">
         <h1>Desserts</h1>
         <div className="card_cont">{items}</div>
@@ -133,7 +168,7 @@ export default function Main() {
                   <img src="/images/icon-carbon-neutral.svg" alt="" />
                   <p>this is a carbon neutral delivery</p>
                 </div>
-                <button type="button" className="btn-bg order_btn">
+                <button type="button" className="btn-bg order_btn" onClick={onConfirm}>
                   Confirm Order
                 </button>
               </div>
