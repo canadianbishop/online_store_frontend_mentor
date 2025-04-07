@@ -21,6 +21,12 @@
       background: hsl(20, 50%, 98%);
 }
 
+@media (max-width:600px){
+      .submit_div{
+            width: 100%;   
+      }  
+}
+
 .submit_div > img{
       display: block;
 }
